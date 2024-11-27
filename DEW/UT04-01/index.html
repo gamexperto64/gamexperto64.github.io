@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <div class="sec1">
+                <div>
+                    <label for="username">Nombre de usuario</label>
+                    <br>
+                    <input type="text" name="username" id="username" placeholder="Nombre de usuario" size="50" required>
+                </div>
+                <div>
+                    <label for="password">Contraseña</label>
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" size="50" required>
+                    <br>
+                    <input type="checkbox" name="mostrar" id="mostrar">
+                    <label for="mostrar">Mostrar Contraseña</label>
+                </div>    
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div class="sec2">
+                <div>
+                    <label for="name">Nombre</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Nombre" size="50" required>
+                    <br>
+                    <br>                    
+                    <label for="telephone">Teléfono</label>
+                    <br>
+                    <input type="tel" name="telephone" id="telephone" placeholder="Ejem: (+34)922123123" required>
+                    <br>
+                    <br>
+                    <label for="doc-select">DNI/NIE</label>
+                    <br>             
+                    <select name="doc-select" id="doc-select">
+                        <option value="">---</option>
+                        <option value="dni">DNI</option>
+                        <option value="nie">NIE</option>
+                    </select>
+                    <input type="text" name="doc-input" id="doc-input" placeholder="DNI/NIE" disabled required> 
+                    <br>
+                    <br>
+                    <label for="">Crear cuenta como:</label>
+                    <br>
+                    <input type="radio" name="cuenta" id="particular" value="Particular" required>
+                    <label for="particular">Particular</label>
+                    <input type="radio" name="cuenta" id="empresa" value="Empresa" required>
+                    <label for="empresa">Empresa</label>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="Apellidos" size="50" required>
+                    <br>
+                    <br>
+                    <label for="postal">Código Postal</label>
+                    <br>
+                    <input type="text" name="postal" id="postal" placeholder="38XXX" required>
+                    <br>
+                    <br>
+                    <label for="nac">Año de Nacimiento</label>
+                    <br>
+                    <select name="nac" id="nac" required>
+                        <option value="">---</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <label for="">Elige tus afficciones:</label>
+            <div class="aficciones">                
+                <div>
+                    <input type="checkbox" name="musica" id="musica" value="Musica">
+                    <label for="musica">Música</label>
+                    <br>
+                    <br>
+                    <input type="checkbox" name="manualidades" id="manualidades" value="Manualidades">
+                    <label for="manualidades">Manualidades</label>                    
+                </div>
+                <div>
+                    <input type="checkbox" name="deporte" id="deporte" value="Deportes">
+                    <label for="deporte">Deportes</label>
+                    <br>
+                    <br>
+                    <input type="checkbox" name="arte" id="arte" value="Artes">
+                    <label for="arte">Artes</label>                    
+                </div>
+                <div>
+                    <input type="checkbox" name="videojuegos" id="videojuegos" value="Videojuegos">
+                    <label for="videojuegos">Videojuegos</label>
+                    <br>
+                    <br>
+                    <input type="checkbox" name="lectura" id="lectura" value="Lectura">
+                    <label for="lectura">Lectura</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Publicación</legend>
+            <div class="sec3">
+                <label for="title">Título</label>
+                <br>
+                <input type="text" name="title" id="title" placeholder="Título" maxlength="15" required>
+                <div class="cont">0/15</div>
+                <br>
+                <br>
+                <label for="descripcion">Descripción</label>
+                <br>
+                <textarea name="descripcion" id="descripcion" maxlength="120" required></textarea>
+                <div class="cont">0/120</div>
+            </div>            
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="index.html">Volver</a>
+</body>
+</html>
