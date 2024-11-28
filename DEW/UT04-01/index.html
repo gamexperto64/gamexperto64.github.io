@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="">
+    <form action="https://www.w3schools.com/action_page.php">
         <fieldset>
             <legend>Datos Usuario</legend>
             <div class="sec1">
@@ -121,17 +121,18 @@
                 <label for="title">Título</label>
                 <br>
                 <input type="text" name="title" id="title" placeholder="Título" maxlength="15" required>
-                <div class="cont">0/15</div>
+                <div class="cont" id="c1">0/15</div>
                 <br>
                 <br>
                 <label for="descripcion">Descripción</label>
                 <br>
                 <textarea name="descripcion" id="descripcion" maxlength="120" required></textarea>
-                <div class="cont">0/120</div>
+                <div class="cont" id="c2">0/120</div>
             </div>            
         </fieldset>
         <input type="submit" value="Enviar">
     </form>
     <a href="index.html">Volver</a>
+    <script src="./script.js"></script>
 </body>
 </html>
