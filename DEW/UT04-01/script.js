@@ -39,3 +39,24 @@ description.addEventListener("input", ()=>{
     c2.textContent = `${curLength}/120`;
 })
 
+
+const DOM = {
+    form: document.getElementById("form"),
+    username: document.getElementById("username"),
+    password: document.getElementById("password"),
+    name: document.getElementById("name"),
+    apellidos: document.getElementById("apellidos"),
+    telephone: document.getElementById("telephone"),
+    postal: document.getElementById("postal"),
+    nac: document.getElementById("nac"),
+    particular: document.getElementById("particular"),
+    empresa: document.getElementById("empresa"),
+}
+
+
+DOM.form.addEventListener("submit", (e)=> {
+    if(!DOM.username.validationMessage == ""){
+        e.preventDefault();
+        alert(DOM.username.validationMessage);
+    }
+})
