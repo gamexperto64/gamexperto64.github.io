@@ -55,7 +55,7 @@ DOM.form.addEventListener("submit", (e)=> {
     
     if(!DOM.username.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[0].className("mensajeErrorVisible");
+        DOM.mensajeError.className("mensajeErrorVisible");
     };
     if(!DOM.password.validationMessage == ""){
         e.preventDefault();
