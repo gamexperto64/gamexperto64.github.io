@@ -15,14 +15,14 @@
                     <label for="NombreUsuario">Nombre de usuario</label>
                     <br>
                     <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" required>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                 </div>
                 <div>
                     <label for="Contrasena">Contraseña</label>
                     <br>
-                    <input type="password" name="Contrasena" id="pasContrasenasword" placeholder="Contraseña" size="50" required>
+                    <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" required>
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <input type="checkbox" name="mostrar" id="mostrar">
                     <label for="mostrar">Mostrar Contraseña</label>
                 </div>    
@@ -36,33 +36,33 @@
                     <br>
                     <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" required>
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>                    
                     <label for="Telefono">Teléfono</label>
                     <br>
                     <input type="tel" name="Telefono" id="Telefono" placeholder="Ejem: (+34)922123123" required>
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>
                     <label for="TipoDocumento">DNI/NIE</label>
                     <br>             
-                    <select name="TipoDocumento" id="TipoDocumento">
+                    <select name="TipoDocumento" id="TipoDocumento" required>
                         <option value="">---</option>
                         <option value="dni">DNI</option>
                         <option value="nie">NIE</option>
                     </select>
                     <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" disabled required> 
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>                
                     <label for="">Crear cuenta como:</label>
                     <br>
-                    <input type="radio" name="CuentaComo" id="particular" value="Particular" required>
-                    <label for="particular">Particular</label>
-                    <input type="radio" name="CuentaComo" id="empresa" value="Empresa" required>
-                    <label for="empresa">Empresa</label>
+                    <input type="radio" name="CuentaComo" id="Particular" value="Particular" required>
+                    <label for="Particular">Particular</label>
+                    <input type="radio" name="CuentaComo" id="Empresa" value="Empresa" required>
+                    <label for="Empresa">Empresa</label>
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>
                 </div>
                 <div>
@@ -70,13 +70,13 @@
                     <br>
                     <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" size="50" required>
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>
                     <label for="CodigoPostal">Código Postal</label>
                     <br>
-                    <input type="text" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" minlength="5" maxlength="5" required value="38">
+                    <input type="text" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" minlength="5" maxlength="5" required >
                     <br>
-                    <p class="mensajeError">Este campo es obligatorio</p>
+                    <p class="mensajeError"></p>
                     <br>
                     <label for="AnioNacimiento">Año de Nacimiento</label>
                     <br>
@@ -94,6 +94,7 @@
                         <option value="2001">2001</option>
                         <option value="2000">2000</option>
                     </select>
+                    <p class="mensajeError"></p>
                 </div>
             </div>
             <br>
@@ -134,7 +135,7 @@
                 <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" maxlength="15" required>
                 <table>
                     <tr>
-                        <td class="mensajeError">Este campo es obligatorio</td>
+                        <td class="mensajeError"></td>
                         <td class="cont" id="c1">0/15</td>
                     </tr>
                 </table>
@@ -145,7 +146,7 @@
                 <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" required></textarea>
                 <table >
                     <tr>
-                        <td class="mensajeError">Este campo es obligatorio</td>
+                        <td class="mensajeError"></td>
                         <td class="cont" id="c2">0/120</td>
                     </tr>
                 </table>

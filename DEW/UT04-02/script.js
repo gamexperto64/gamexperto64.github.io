@@ -55,40 +55,66 @@ DOM.form.addEventListener("submit", (e)=> {
     
     if(!DOM.username.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError.className("mensajeErrorVisible");
+        DOM.mensajeError[0].textContent = DOM.username.validationMessage;
+        DOM.username.style.border = "solid 2px red";
     };
     if(!DOM.password.validationMessage == ""){
         e.preventDefault();
-        
+        DOM.mensajeError[1].textContent = DOM.password.validationMessage;
+        DOM.password.style.border = "solid 2px red";
     };
     if(!DOM.name.validationMessage == ""){
-        
         e.preventDefault();
-    };
-    if(!DOM.apellidos.validationMessage == ""){
-        e.preventDefault();
-
+        DOM.mensajeError[2].textContent = DOM.name.validationMessage;
+        DOM.name.style.border = "solid 2px red";
     };
     if(!DOM.telephone.validationMessage == ""){
         e.preventDefault();
-        
+        DOM.mensajeError[3].textContent = DOM.telephone.validationMessage;    
+        DOM.telephone.style.border = "solid 2px red";
     };
-    if(!DOM.postal.validationMessage == ""){
+    if(!DOM.documentoInp.validationMessage == "" || !DOM.documentoSel.validationMessage == ""){
         e.preventDefault();
-        
+        DOM.mensajeError[4].textContent = DOM.documentoSel.validationMessage;
+        DOM.documentoInp.style.border = "solid 2px red";
     };
-    if(!DOM.documentoInp.validationMessage == ""){
-        e.preventDefault();
-        
-    };
+    
     if(!DOM.empresa.validationMessage == ""){
         e.preventDefault();
-        
+        DOM.mensajeError[5].textContent = DOM.empresa.validationMessage;
+        DOM.empresa.style.border = "solid 2px red";
     };
     if(!DOM.particular.validationMessage == ""){
         e.preventDefault();
-        
+        DOM.mensajeError[5].textContent = DOM.particular.validationMessage;
+        DOM.particular.style.border = "solid 2px red";
     };
+    if(!DOM.apellidos.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[6].textContent = DOM.apellidos.validationMessage;
+        DOM.apellidos.style.border = "solid 2px red";
+    };
+    if(!DOM.postal.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[7].textContent = DOM.postal.validationMessage;
+        DOM.postal.style.border = "solid 2px red";
+    };
+    if(!DOM.nac.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[8].textContent = DOM.nac.validationMessage;
+        DOM.nac.style.border = "solid 2px red";
+    };
+    if(!DOM.titulo.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[9].textContent = DOM.titulo.validationMessage;
+        DOM.titulo.style.border = "solid 2px red";
+    };
+    if(!DOM.descripcion.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[10].textContent = DOM.descripcion.validationMessage;
+        DOM.descripcion.style.border = "solid 2px red";
+    };
+    
     
 })
 

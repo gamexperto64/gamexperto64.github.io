@@ -47,11 +47,9 @@ table{width: 100%;}
     text-align: end;
     color: gray;
 }
-.mensajeError{ display: none; }
-
-.mensajeErrorVisible{
-    color: red;
+.mensajeError{
     margin: 0;
+    color: red;
 }
 
 input[type="submit"]{
