@@ -11,11 +11,11 @@ const DOM = {
     empresa: document.getElementById("Empresa"),
     documentoSel: document.getElementById("TipoDocumento"),
     documentoInp: document.getElementById("DniNie"),
-    aficiones: document.getElementById("aficiones"),
+    aficiones: document.getElementById("Aficiones"),
     c1: document.getElementById("c1"),
     c2: document.getElementById("c2"),
-    titulo: document.getElementById("title"),
-    descripcion: document.getElementById("descripcion"),
+    titulo: document.getElementById("PublicacionTitulo"),
+    descripcion: document.getElementById("PublicacionDescripcion"),
     checkbox: document.querySelectorAll('input[type="checkbox"]'),
     label: document.querySelectorAll("label")
 }
