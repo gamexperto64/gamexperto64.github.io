@@ -15,11 +15,14 @@
                     <label for="NombreUsuario">Nombre de usuario</label>
                     <br>
                     <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" required>
+                    <span class="mensajeError">Este campo es obligatorio</span>
                 </div>
                 <div>
                     <label for="Contrasena">Contraseña</label>
                     <br>
                     <input type="password" name="Contrasena" id="pasContrasenasword" placeholder="Contraseña" size="50" required>
+                    <br>
+                    <span class="mensajeError">Este campo es obligatorio</span>
                     <br>
                     <input type="checkbox" name="mostrar" id="mostrar">
                     <label for="mostrar">Mostrar Contraseña</label>
@@ -34,10 +37,14 @@
                     <br>
                     <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" required>
                     <br>
+                    <span class="mensajeError">Este campo es obligatorio</span>
+                    <br>
                     <br>                    
                     <label for="Telefono">Teléfono</label>
                     <br>
                     <input type="tel" name="Telefono" id="Telefono" placeholder="Ejem: (+34)922123123" required>
+                    <br>
+                    <span class="mensajeError">Este campo es obligatorio</span>
                     <br>
                     <br>
                     <label for="TipoDocumento">DNI/NIE</label>
@@ -49,6 +56,8 @@
                     </select>
                     <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" disabled required> 
                     <br>
+                    <span class="mensajeError">Este campo es obligatorio</span>
+                    <br>
                     <br>
                     <label for="">Crear cuenta como:</label>
                     <br>
@@ -56,6 +65,9 @@
                     <label for="particular">Particular</label>
                     <input type="radio" name="CuentaComo" id="empresa" value="Empresa" required>
                     <label for="empresa">Empresa</label>
+                    <br>
+                    <span class="mensajeError">Este campo es obligatorio</span>
+                    <br>
                 </div>
                 <div>
                     <label for="Apellidos">Apellidos</label>
@@ -65,7 +77,7 @@
                     <br>
                     <label for="CodigoPostal">Código Postal</label>
                     <br>
-                    <input type="text" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" required>
+                    <input type="text" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" minlength="5" maxlength="5" required value="38">
                     <br>
                     <br>
                     <label for="AnioNacimiento">Año de Nacimiento</label>
@@ -122,18 +134,28 @@
                 <label for="PublicacionTitulo">Título</label>
                 <br>
                 <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" maxlength="15" required>
-                <div class="cont" id="c1">0/15</div>
+                <table>
+                    <tr>
+                        <td class="mensajeError">Este campo es obligatorio</td>
+                        <td class="cont" id="c1">0/15</td>
+                    </tr>
+                </table>
                 <br>
                 <br>
                 <label for="PublicacionDescripcion">Descripción</label>
                 <br>
                 <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" required></textarea>
-                <div class="cont" id="c2">0/120</div>
+                <table >
+                    <tr>
+                        <td class="mensajeError">Este campo es obligatorio</td>
+                        <td class="cont" id="c2">0/120</td>
+                    </tr>
+                </table>
             </div>            
         </fieldset>
         <input type="submit" value="Enviar">
     </form>
-    <a href="../../index.html">Volver</a>
+    <button class="volver"><a href="../../index.html">Volver</a></button>
     <script src="./script.js"></script>
 </body>
 </html>

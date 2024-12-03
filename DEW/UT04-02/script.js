@@ -17,7 +17,8 @@ const DOM = {
     titulo: document.getElementById("PublicacionTitulo"),
     descripcion: document.getElementById("PublicacionDescripcion"),
     checkbox: document.querySelectorAll('input[type="checkbox"]'),
-    label: document.querySelectorAll("label")
+    label: document.querySelectorAll("label"),
+    mensajeError: document.querySelectorAll(".mensajeError")
 }
 
 let mostrar = document.getElementById("mostrar");
@@ -50,21 +51,19 @@ DOM.descripcion.addEventListener("input", ()=>{
     let curLength = DOM.descripcion.value.length;
     DOM.c2.textContent = `${curLength}/120`;
 })
-let mensajeError = document.createElement("span");
-mensajeError.textContent = "Este campo es obligatorio";
 DOM.form.addEventListener("submit", (e)=> {
     
     if(!DOM.username.validationMessage == ""){
         e.preventDefault();
-        DOM.username.appendChild(mensajeError);
+        DOM.mensajeError[0].className("mensajeErrorVisible");
     };
     if(!DOM.password.validationMessage == ""){
         e.preventDefault();
         
     };
     if(!DOM.name.validationMessage == ""){
+        
         e.preventDefault();
-
     };
     if(!DOM.apellidos.validationMessage == ""){
         e.preventDefault();

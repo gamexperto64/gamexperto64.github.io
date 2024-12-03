@@ -2,10 +2,16 @@
     display: flex;
     justify-content: space-between;
 }
+form{
+    border: solid grey 1px;
+    border-radius: 15px 15px 5px 5px;
+    box-shadow: 0px 0px 15px grey;
+    padding: 25px 0 0 0 ;
+}
 
 .sec1 div, .sec2 div{ width: 50%; }
 
-.aficiones{
+.Aficiones{
     display: flex;
     justify-content: space-between;
 }
@@ -17,7 +23,7 @@ fieldset{
 
 input[type="text"], input[type="password"]{ width: 90%; }
 
-#doc-input{ width: 75% ; }
+#DniNie{ width: 75% ; }
 
 legend{
     font-size: 150%;
@@ -26,7 +32,7 @@ legend{
     border-bottom: 3px solid ;
 }
 
-.aficciones div{ width: 33%; }
+.Aficciones div{ width: 33%; }
 
 .sec3 input{ width: 100%; }
 
@@ -35,13 +41,34 @@ textarea{
     height: 75px;
 }
 
+table{width: 100%;}
+
 .cont{
-    width: 100%;
     text-align: end;
     color: gray;
+}
+.mensajeError{ display: none; }
+
+.mensajeErrorVisible{
+    color: red;
+    margin: 0;
 }
 
 input[type="submit"]{
     width: 100%;
     height: 35px;
+    border-radius: 5px;
+}
+
+.volver{
+    margin-top: 5px;
+    background-color: blue;
+    border: solid blue;
+    border-radius: 3px;
+}
+.volver a{
+    text-decoration: none;
+    color: white;
+    font-size: 125%;
+    font-weight: bold;
 }
