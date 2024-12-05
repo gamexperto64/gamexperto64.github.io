@@ -7,153 +7,188 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="https://www.w3schools.com/action_page.php" novalidate id="form">
-        <fieldset>
-            <legend>Datos Usuario</legend>
-            <div class="sec1">
-                <div>
-                    <label for="NombreUsuario">Nombre de usuario</label>
-                    <br>
-                    <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" required>
-                    <p class="mensajeError"></p>
+    <div class="col1">
+        <form action="https://www.w3schools.com/action_page.php" novalidate id="form">
+            <fieldset>
+                <legend>Datos Usuario</legend>
+                <div class="sec1">
+                    <div>
+                        <label for="NombreUsuario">Nombre de usuario</label>
+                        <br>
+                        <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" minlength="4" maxlength="20" required>
+                        <p class="mensajeError"></p>
+                    </div>
+                    <div>
+                        <label for="Contrasena">Contraseña</label>
+                        <br>
+                        <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" required>
+                        <br>
+                        <p class="mensajeError"></p>
+                        <input type="checkbox" name="mostrar" id="mostrar">
+                        <label for="mostrar">Mostrar Contraseña</label>
+                    </div>    
                 </div>
-                <div>
-                    <label for="Contrasena">Contraseña</label>
-                    <br>
-                    <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" required>
-                    <br>
-                    <p class="mensajeError"></p>
-                    <input type="checkbox" name="mostrar" id="mostrar">
-                    <label for="mostrar">Mostrar Contraseña</label>
-                </div>    
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Datos Personales</legend>
-            <div class="sec2">
-                <div>
-                    <label for="Nombre">Nombre</label>
-                    <br>
-                    <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" required>
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>                    
-                    <label for="Telefono">Teléfono</label>
-                    <br>
-                    <input type="tel" name="Telefono" id="Telefono" placeholder="Ejem: (+34)922123123" required>
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>
-                    <label for="TipoDocumento">DNI/NIE</label>
-                    <br>             
-                    <select name="TipoDocumento" id="TipoDocumento" required>
-                        <option value="">---</option>
-                        <option value="dni">DNI</option>
-                        <option value="nie">NIE</option>
-                    </select>
-                    <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" disabled required> 
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>                
-                    <label for="">Crear cuenta como:</label>
-                    <br>
-                    <input type="radio" name="CuentaComo" id="Particular" value="Particular" required>
-                    <label for="Particular">Particular</label>
-                    <input type="radio" name="CuentaComo" id="Empresa" value="Empresa" required>
-                    <label for="Empresa">Empresa</label>
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>
-                </div>
-                <div>
-                    <label for="Apellidos">Apellidos</label>
-                    <br>
-                    <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" size="50" required>
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>
-                    <label for="CodigoPostal">Código Postal</label>
-                    <br>
-                    <input type="text" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" minlength="5" maxlength="5" required >
-                    <br>
-                    <p class="mensajeError"></p>
-                    <br>
-                    <label for="AnioNacimiento">Año de Nacimiento</label>
-                    <br>
-                    <select name="AnioNacimiento" id="AnioNacimiento" required>
-                        <option value="">---</option>
-                        <option value="2010">2010</option>
-                        <option value="2009">2009</option>
-                        <option value="2008">2008</option>
-                        <option value="2007">2007</option>
-                        <option value="2006">2006</option>
-                        <option value="2005">2005</option>
-                        <option value="2004">2004</option>
-                        <option value="2003">2003</option>
-                        <option value="2002">2002</option>
-                        <option value="2001">2001</option>
-                        <option value="2000">2000</option>
-                    </select>
-                    <p class="mensajeError"></p>
-                </div>
-            </div>
-            <br>
-            <label for="Aficiones">Elige tus afficciones:</label>
-            <div class="Aficiones">                
-                <div>
-                    <input type="checkbox" name="musica" id="musica" value="MU">
-                    <label for="musica">Música</label>
-                    <br>
-                    <br>
-                    <input type="checkbox" name="manualidades" id="manualidades" value="MA">
-                    <label for="manualidades">Manualidades</label>                    
-                </div>
-                <div>
-                    <input type="checkbox" name="deporte" id="deporte" value="DE">
-                    <label for="deporte">Deportes</label>
-                    <br>
-                    <br>
-                    <input type="checkbox" name="arte" id="arte" value="AR">
-                    <label for="arte">Artes</label>                    
-                </div>
-                <div>
-                    <input type="checkbox" name="videojuegos" id="videojuegos" value="VI">
-                    <label for="videojuegos">Videojuegos</label>
-                    <br>
-                    <br>
-                    <input type="checkbox" name="lectura" id="lectura" value="LE">
-                    <label for="lectura">Lectura</label>
-                </div>
-                <input type="hidden" name="Aficiones" id="Aficiones">
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Datos Publicación</legend>
-            <div class="sec3">
-                <label for="PublicacionTitulo">Título</label>
+            </fieldset>
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <section class="sec2">
+                    <div>
+                        <label for="Nombre">Nombre</label>
+                        <br>
+                        <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" minlength="4" maxlength="20" required>
+                        <br>
+                        <p class="mensajeError"></p>
+                        <br>                                        
+                    </div>
+                    <div>
+                        <label for="Apellidos">Apellidos</label>
+                        <br>
+                        <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" size="50" minlength="4" maxlength="20" required>
+                        <br>
+                        <p class="mensajeError"></p>
+                        <br>   
+                    </div>
+                    <div>
+                        <label for="Telefono">Teléfono</label>
+                        <br>
+                        <input type="tel" name="Telefono" id="Telefono" placeholder="Ejem: (+34)922123123" required>
+                        <br>
+                        <p class="mensajeError"></p>
+                        <br>
+                    </div>
+                    <div>
+                         <label for="CodigoPostal">Código Postal</label>
+                        <br>
+                        <input type="number" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" min="38000" max="38999" value="38" required >
+                        <br>
+                        <p class="mensajeError"></p>
+                        <br>
+                    </div>
+                    <div class="sec2-1">
+                        <div>
+                            <label for="TipoDocumento">DNI/NIE</label>
+                            <br>             
+                            <select name="TipoDocumento" id="TipoDocumento" required>
+                                <option value="">---</option>
+                                <option value="dni">DNI</option>
+                                <option value="nie">NIE</option>
+                            </select>
+                            <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" disabled required> 
+                            <br>
+                            <p class="mensajeError"></p>
+                            <br>
+                        </div>
+                        <div>
+                            <label for="">Crear cuenta como:</label>
+                            <br>
+                            <input type="radio" name="CuentaComo" id="Particular" value="Particular" required>
+                            <label for="Particular">Particular</label>
+                            <input type="radio" name="CuentaComo" id="Empresa" value="Empresa" required>
+                            <label for="Empresa">Empresa</label>
+                            <br>
+                            <p class="mensajeError"></p>
+                            <br>                        
+                        </div>
+                        <div>                        
+                            <label for="AnioNacimiento">Año de Nacimiento</label>
+                            <br>
+                            <select name="AnioNacimiento" id="AnioNacimiento" required>
+                                <option value="">---</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                            </select>
+                            <p class="mensajeError"></p>
+                        </div>
+                    </div> 
+                </section>
                 <br>
-                <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" maxlength="15" required>
-                <table>
-                    <tr>
-                        <td class="mensajeError"></td>
-                        <td class="cont" id="c1">0/15</td>
-                    </tr>
-                </table>
-                <br>
-                <br>
-                <label for="PublicacionDescripcion">Descripción</label>
-                <br>
-                <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" required></textarea>
-                <table >
-                    <tr>
-                        <td class="mensajeError"></td>
-                        <td class="cont" id="c2">0/120</td>
-                    </tr>
-                </table>
-            </div>            
-        </fieldset>
-        <input type="submit" value="Enviar">
-    </form>
+                <label for="Aficiones">Elige tus afficciones (min. 2):</label>
+                <div class="Aficiones">
+                    <div>
+                        <input type="checkbox" name="musica" id="musica" value="MU">
+                        <label for="musica">Música</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="manualidades" id="manualidades" value="MA">
+                        <label for="manualidades">Manualidades</label>                    
+                    </div>
+                    <div>
+                        <input type="checkbox" name="deporte" id="deporte" value="DE">
+                        <label for="deporte">Deportes</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="arte" id="arte" value="AR">
+                        <label for="arte">Artes</label>                    
+                    </div>
+                    <div>
+                        <input type="checkbox" name="videojuegos" id="videojuegos" value="VI">
+                        <label for="videojuegos">Videojuegos</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" name="lectura" id="lectura" value="LE">
+                        <label for="lectura">Lectura</label>
+                    </div>
+                    <input type="hidden" name="Aficiones" id="Aficiones" >
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Datos Publicación</legend>
+                    <label for="PublicacionTitulo">Título</label>
+                    <br>
+                    <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" minlength="4" maxlength="15" required>
+                    <table>
+                        <tr>
+                            <td class="mensajeError"></td>
+                            <td class="cont" id="c1">0/15</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <label for="PublicacionDescripcion">Descripción</label>
+                    <br>
+                    <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" minlength="4" placeholder="Añada una descripción" required></textarea>
+                    <table >
+                        <tr>
+                            <td class="mensajeError"></td>
+                            <td class="cont" id="c2">0/120</td>
+                        </tr>
+                    </table>        
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+   <!--
+    <div class="col2">
+        <h2>Listado de errore</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+    </div>
+   --> 
     <button class="volver"><a href="../../index.html">Volver</a></button>
     <script src="./script.js"></script>
 </body>

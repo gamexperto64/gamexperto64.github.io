@@ -68,14 +68,24 @@ DOM.form.addEventListener("submit", (e)=> {
         DOM.mensajeError[2].textContent = DOM.name.validationMessage;
         DOM.name.style.border = "solid 2px red";
     };
+    if(!DOM.apellidos.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[3].textContent = DOM.apellidos.validationMessage;
+        DOM.apellidos.style.border = "solid 2px red";
+    };
     if(!DOM.telephone.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[3].textContent = DOM.telephone.validationMessage;    
+        DOM.mensajeError[4].textContent = DOM.telephone.validationMessage;    
         DOM.telephone.style.border = "solid 2px red";
+    };
+    if(!DOM.postal.validationMessage == ""){
+        e.preventDefault();
+        DOM.mensajeError[5].textContent = DOM.postal.validationMessage;
+        DOM.postal.style.border = "solid 2px red";
     };
     if(!DOM.documentoInp.validationMessage == "" || !DOM.documentoSel.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[4].textContent = DOM.documentoSel.validationMessage;
+        DOM.mensajeError[6].textContent = DOM.documentoSel.validationMessage;
         DOM.documentoInp.style.border = "solid 2px red";
     };
     
@@ -89,16 +99,7 @@ DOM.form.addEventListener("submit", (e)=> {
         DOM.mensajeError[5].textContent = DOM.particular.validationMessage;
         DOM.particular.style.border = "solid 2px red";
     };
-    if(!DOM.apellidos.validationMessage == ""){
-        e.preventDefault();
-        DOM.mensajeError[6].textContent = DOM.apellidos.validationMessage;
-        DOM.apellidos.style.border = "solid 2px red";
-    };
-    if(!DOM.postal.validationMessage == ""){
-        e.preventDefault();
-        DOM.mensajeError[7].textContent = DOM.postal.validationMessage;
-        DOM.postal.style.border = "solid 2px red";
-    };
+    
     if(!DOM.nac.validationMessage == ""){
         e.preventDefault();
         DOM.mensajeError[8].textContent = DOM.nac.validationMessage;
