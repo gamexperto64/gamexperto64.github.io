@@ -14,16 +14,13 @@
                 <div class="sec1">
                     <div>
                         <label for="NombreUsuario">Nombre de usuario</label>
-                        <br>
                         <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" minlength="4" maxlength="20" required>
-                        <p class="mensajeError"></p>
+                        <span id="msgUser">El Nombre de Usuario es obligatorio</span>
                     </div>
                     <div>
                         <label for="Contrasena">Contraseña</label>
-                        <br>
-                        <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" required>
-                        <br>
-                        <p class="mensajeError"></p>
+                        <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" pattern="[0-9]{8}$" maxlength="8" required>
+                        <span id="msgPsw">La Contraseña ha de ser numérica</span>
                         <input type="checkbox" name="mostrar" id="mostrar">
                         <label for="mostrar">Mostrar Contraseña</label>
                     </div>    
@@ -34,162 +31,122 @@
                 <section class="sec2">
                     <div>
                         <label for="Nombre">Nombre</label>
-                        <br>
-                        <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" minlength="4" maxlength="20" required>
-                        <br>
-                        <p class="mensajeError"></p>
-                        <br>                                        
+                        <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" minlength="4" maxlength="20" pattern="[A-Za-z]+" required>
+                        <span id="msgName">Introduzca su nombre</span>
                     </div>
                     <div>
                         <label for="Apellidos">Apellidos</label>
-                        <br>
                         <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" size="50" minlength="4" maxlength="20" required>
-                        <br>
-                        <p class="mensajeError"></p>
-                        <br>   
+                        <span id="msgAp">Introduzca sus apellidos</span>
                     </div>
                     <div>
                         <label for="Telefono">Teléfono</label>
-                        <br>
-                        <input type="tel" name="Telefono" id="Telefono" placeholder="Ejem: (+34)922123123" required>
-                        <br>
-                        <p class="mensajeError"></p>
-                        <br>
+                        <input type="tel" name="Telefono" id="Telefono" pattern="^+34[0-9]{9}$" placeholder="Ejem: (+34)922123123" required >
+                        <span id="msgTel">El Teléfono introducido es incorrecto o no válido</span>
                     </div>
                     <div>
-                         <label for="CodigoPostal">Código Postal</label>
-                        <br>
-                        <input type="number" name="CodigoPostal" id="CodigoPostal" placeholder="38XXX" min="38000" max="38999" value="38" required >
-                        <br>
-                        <p class="mensajeError"></p>
-                        <br>
+                        <label for="CodigoPostal">Código Postal</label>
+                        <input type="number" name="CodigoPostal" id="CodigoPostal" pattern="^38[0-9]{3}$" placeholder="38XXX" min="38000" max="38999" required >
+                        <span id="msgCP">El Código Postal introducido es incorrecto o no válido</span>
                     </div>
                     <div class="sec2-1">
                         <div>
                             <label for="TipoDocumento">DNI/NIE</label>
-                            <br>             
-                            <select name="TipoDocumento" id="TipoDocumento" required>
-                                <option value="">---</option>
-                                <option value="dni">DNI</option>
-                                <option value="nie">NIE</option>
-                            </select>
-                            <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" disabled required> 
-                            <br>
-                            <p class="mensajeError"></p>
-                            <br>
+                            <div>
+                                <select name="TipoDocumento" id="TipoDocumento" required>
+                                    <option value="">---</option>
+                                    <option value="dni">DNI</option>
+                                    <option value="nie">NIE</option>
+                                </select>
+                                <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" pattern="([XYZxyz]\d{7}|[0-9]{8})[A-Za-z]" disabled required> 
+                                <span id="msgDoc">Seleccione el tipo de documento</span>
+                            </div>
                         </div>
                         <div>
-                            <label for="">Crear cuenta como:</label>
-                            <br>
+                            <div>
+                                <label for="">Crear cuenta como:</label>
+                            </div>
                             <input type="radio" name="CuentaComo" id="Particular" value="Particular" required>
                             <label for="Particular">Particular</label>
                             <input type="radio" name="CuentaComo" id="Empresa" value="Empresa" required>
-                            <label for="Empresa">Empresa</label>
-                            <br>
-                            <p class="mensajeError"></p>
-                            <br>                        
+                            <label for="Empresa" class="inline">Empresa</label>
+                            <span id="msgCuenta">Seleccione tu tipo de cuenta</span>
                         </div>
                         <div>                        
                             <label for="AnioNacimiento">Año de Nacimiento</label>
-                            <br>
                             <select name="AnioNacimiento" id="AnioNacimiento" required>
                                 <option value="">---</option>
-                                <option value="2010">2010</option>
-                                <option value="2009">2009</option>
-                                <option value="2008">2008</option>
-                                <option value="2007">2007</option>
-                                <option value="2006">2006</option>
-                                <option value="2005">2005</option>
-                                <option value="2004">2004</option>
-                                <option value="2003">2003</option>
-                                <option value="2002">2002</option>
-                                <option value="2001">2001</option>
-                                <option value="2000">2000</option>
-                                <option value="1999">1999</option>
-                                <option value="1998">1998</option>
-                                <option value="1997">1997</option>
-                                <option value="1996">1996</option>
-                                <option value="1995">1995</option>
-                                <option value="1994">1994</option>
-                                <option value="1993">1993</option>
-                                <option value="1992">1992</option>
-                                <option value="1991">1991</option>
-                                <option value="1990">1990</option>
                             </select>
-                            <p class="mensajeError"></p>
+                            <span id="msgAnio">Seleccione su año de nacimiento</span>
                         </div>
                     </div> 
                 </section>
-                <br>
-                <label for="Aficiones">Elige tus afficciones (min. 2):</label>
-                <div class="Aficiones">
+                <label for="Aficiones">Elige tus aficiones (min. 2):</label>
+                <div class="divAficiones">
                     <div>
-                        <input type="checkbox" name="musica" id="musica" value="MU">
-                        <label for="musica">Música</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="manualidades" id="manualidades" value="MA">
-                        <label for="manualidades">Manualidades</label>                    
+                        <input type="checkbox" id="musica" value="MU">
+                        <label for="musica">Música</label>                        
                     </div>
                     <div>
-                        <input type="checkbox" name="deporte" id="deporte" value="DE">
+                        <input type="checkbox" id="deporte" value="DE">
                         <label for="deporte">Deportes</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="arte" id="arte" value="AR">
-                        <label for="arte">Artes</label>                    
                     </div>
                     <div>
-                        <input type="checkbox" name="videojuegos" id="videojuegos" value="VI">
+                        <input type="checkbox" id="videojuegos" value="VI">
                         <label for="videojuegos">Videojuegos</label>
-                        <br>
-                        <br>
-                        <input type="checkbox" name="lectura" id="lectura" value="LE">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="manualidades" value="MA">
+                        <label for="manualidades">Manualidades</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="arte" value="AR">
+                        <label for="arte">Artes</label> 
+                    </div>
+                    <div>                                                    
+                        <input type="checkbox" id="lectura" value="LE">
                         <label for="lectura">Lectura</label>
                     </div>
-                    <input type="hidden" name="Aficiones" id="Aficiones" >
+                    <input type="hidden" name="Aficiones" id="Aficiones" required>
+                    <span id="msgAfi">Elija al menos dos aficiones</span>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Datos Publicación</legend>
-                    <label for="PublicacionTitulo">Título</label>
-                    <br>
+                <div>
+                    <label for="PublicacionTitulo">Título</label>                     
                     <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" minlength="4" maxlength="15" required>
-                    <table>
-                        <tr>
-                            <td class="mensajeError"></td>
-                            <td class="cont" id="c1">0/15</td>
-                        </tr>
-                    </table>
-                    <br>
-                    <br>
-                    <label for="PublicacionDescripcion">Descripción</label>
-                    <br>
+                    <span id="msgTitulo">Introduzca la descripción de la publicación</span>
+                    <span class="cont" id="c1">0/15</span>
+                </div>
+                    
+                <div>
+                    <label for="PublicacionDescripcion">Descripción</label>                     
                     <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" minlength="4" placeholder="Añada una descripción" required></textarea>
-                    <table >
-                        <tr>
-                            <td class="mensajeError"></td>
-                            <td class="cont" id="c2">0/120</td>
-                        </tr>
-                    </table>        
+                    <span id="msgDesc">Introduzca la descripción de la publicación</span>
+                    <span class="cont" id="c2">0/120</span>
+                </div>                    
             </fieldset>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar">    <button class="volver"><a href="../../index.html">Volver</a></button>
         </form>
     </div>
-
-   <!--
-    <div class="col2">
-        <h2>Listado de errore</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, praesentium! Aut quisquam neque voluptatum vitae ea ducimus laborum saepe suscipit tenetur blanditiis veritatis cum quo sed, itaque doloremque iste autem.</p>
+    <div class="colErrores">
+        <h1 class="center">Lista de Errores</h1>
+        <h3>Cuando no haya Errores en el Formulario no Verás Nada Aquí.</h3>
+        <div><span class="dato">Nombre de Usuario: </span><p class="error"></p></div>
+        <div><span class="dato">Contraseña: </span><p class="error"></p></div>
+        <div><span class="dato">Nombres: </span><p class="error"></p></div>
+        <div><span class="dato">Apellidos: </span><p class="error"></p></div>
+        <div><span class="dato">Teléfono: </span><p class="error"></p></div>
+        <div><span class="dato">Código Postal: </span><p class="error"></p></div>
+        <div><span class="dato">DNI/NIE: </span><p class="error"></p></div>
+        <div><span class="dato">Cuenta: </span><p class="error"></p></div>
+        <div><span class="dato">Año de nacimiento: </span><p class="error"></p></div>
+        <div><span class="dato">Aficiones: </span><p class="error"></p></div>
+        <div><span class="dato">Título: </span><p class="error"></p></div>
+        <div><span class="dato">Descripción: </span><p class="error"></p></div>
     </div>
-   --> 
-    <button class="volver"><a href="../../index.html">Volver</a></button>
+
     <script src="./script.js"></script>
 </body>
 </html>

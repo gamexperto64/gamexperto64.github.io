@@ -18,10 +18,37 @@ const DOM = {
     descripcion: document.getElementById("PublicacionDescripcion"),
     checkbox: document.querySelectorAll('input[type="checkbox"]'),
     label: document.querySelectorAll("label"),
-    mensajeError: document.querySelectorAll(".mensajeError")
+    mensajeError: document.querySelectorAll(".error"),
+    musica: document.getElementById("musica"),
+    manualidades: document.getElementById("manualidades"),
+    deporte: document.getElementById("deporte"),
+    arte: document.getElementById("arte"),
+    videojuegos: document.getElementById("videojuegos"),
+    lectura: document.getElementById("lectura"),
+    cuenta: document.getElementById("msgCuenta"),
+    afi: document.getElementById("msgAfi"),
+    doc: document.getElementById("msgDoc")
 }
 
-let mostrar = document.getElementById("mostrar");
+const mostrar = document.getElementById("mostrar");
+
+const currentYear = 2010; // Año más reciente
+const earliestYear = 1920; // Año más antiguo
+
+for (let year = currentYear; year >= earliestYear; year--) {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = year;
+    DOM.nac.appendChild(option);
+}
+DOM.particular.addEventListener("click", ()=>{
+    DOM.cuenta.innerHTML = "";
+});
+DOM.empresa.addEventListener("click", ()=> {
+    DOM.cuenta.innerHTML = ""
+    
+});
+
 
 mostrar.addEventListener("change", ()=> {
     if(mostrar.checked){
@@ -30,7 +57,7 @@ mostrar.addEventListener("change", ()=> {
     else{
         DOM.password.type = "password";
     }
-})
+});
 DOM.documentoSel.addEventListener("change", ()=>{
     if(DOM.documentoSel.value == "dni" || DOM.documentoSel.value == "nie"){
         DOM.documentoInp.disabled = false
@@ -38,26 +65,122 @@ DOM.documentoSel.addEventListener("change", ()=>{
     else{
         DOM.documentoInp.disabled = true
     }
-})
+});
 
 DOM.titulo.addEventListener("input", ()=>{
     let curLength = DOM.titulo.value.length;
     DOM.c1.textContent = `${curLength}/15`;
-;
-})
-
+});
 
 DOM.descripcion.addEventListener("input", ()=>{
     let curLength = DOM.descripcion.value.length;
     DOM.c2.textContent = `${curLength}/120`;
-})
+});
+
+let seleccionados = [];
+
+DOM.musica.addEventListener("click", () =>
+{
+    if (DOM.musica.checked)
+    {
+        seleccionados.push(DOM.musica.value);
+    }
+    else
+    {
+        borrarAficion(DOM.musica.value);
+    }
+    checkHobbies();
+});
+
+DOM.manualidades.addEventListener("click", () =>
+{
+    if (DOM.manualidades.checked)
+    {
+        seleccionados.push(DOM.manualidades.value);
+    }
+    else
+    {
+        borrarAficion(DOM.manualidades.value);
+    }
+    checkHobbies();
+});
+
+DOM.deporte.addEventListener("click", () =>
+{
+    if (DOM.deporte.checked)
+    {
+        seleccionados.push(DOM.deporte.value);
+    }
+    else
+    {
+        borrarAficion(DOM.deporte.value);
+    }
+    checkHobbies();
+});
+
+DOM.arte.addEventListener("click", () =>
+{
+    if (DOM.arte.checked)
+    {
+        seleccionados.push(DOM.arte.value);
+    }
+    else
+    {
+        borrarAficion(DOM.arte.value);
+    }
+    checkHobbies();
+});
+
+DOM.videojuegos.addEventListener("click", () =>
+{
+    if (DOM.videojuegos.checked)
+    {
+        seleccionados.push(DOM.videojuegos.value);
+    }
+    else
+    {
+        borrarAficion(DOM.videojuegos.value);
+    }
+    checkHobbies();
+});
+DOM.lectura.addEventListener("click", () =>
+{
+    if (DOM.lectura.checked)
+    {
+        seleccionados.push(DOM.lectura.value)
+    }
+    else
+    {
+        borrarAficion(DOM.lectura.value);
+    }
+    checkHobbies();
+});
+
+function borrarAficion(aficion)
+{
+    let position = seleccionados.indexOf(aficion);
+    seleccionados.splice(position, 1);
+}
+
+function checkHobbies()
+{
+    if (seleccionados.length > 1)
+    {
+        DOM.afi.style.visibility = "hidden";
+        DOM.aficiones = seleccionados.values;
+    }
+    else
+    {
+        DOM.afi.style.visibility = "visible";
+    }
+}
+
 DOM.form.addEventListener("submit", (e)=> {
-    
     if(!DOM.username.validationMessage == ""){
         e.preventDefault();
         DOM.mensajeError[0].textContent = DOM.username.validationMessage;
         DOM.username.style.border = "solid 2px red";
-    };
+    }
     if(!DOM.password.validationMessage == ""){
         e.preventDefault();
         DOM.mensajeError[1].textContent = DOM.password.validationMessage;
@@ -83,39 +206,39 @@ DOM.form.addEventListener("submit", (e)=> {
         DOM.mensajeError[5].textContent = DOM.postal.validationMessage;
         DOM.postal.style.border = "solid 2px red";
     };
-    if(!DOM.documentoInp.validationMessage == "" || !DOM.documentoSel.validationMessage == ""){
+    if(!DOM.documentoSel.validationMessage == ""){
         e.preventDefault();
+        DOM.doc.textContent = "Seleccione el tipo de documento";
         DOM.mensajeError[6].textContent = DOM.documentoSel.validationMessage;
         DOM.documentoInp.style.border = "solid 2px red";
     };
-    
-    if(!DOM.empresa.validationMessage == ""){
+    if(!DOM.documentoInp.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[5].textContent = DOM.empresa.validationMessage;
-        DOM.empresa.style.border = "solid 2px red";
+        DOM.doc.textContent = "El DNI o NIE es incorrecto o está vacío";
+        DOM.mensajeError[6].textContent = DOM.documentoInp.validationMessage;
+        DOM.documentoInp.style.border = "solid 2px red";
     };
-    if(!DOM.particular.validationMessage == ""){
+    if(!DOM.empresa.validationMessage == "" || !DOM.particular.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[5].textContent = DOM.particular.validationMessage;
-        DOM.particular.style.border = "solid 2px red";
+        DOM.mensajeError[7].textContent = DOM.empresa.validationMessage;
     };
-    
     if(!DOM.nac.validationMessage == ""){
         e.preventDefault();
         DOM.mensajeError[8].textContent = DOM.nac.validationMessage;
         DOM.nac.style.border = "solid 2px red";
     };
+    if(DOM.afi.style.visibility != "hidden"){
+        e.preventDefault();
+        DOM.mensajeError[9].textContent = DOM.afi.textContent;
+    }
     if(!DOM.titulo.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[9].textContent = DOM.titulo.validationMessage;
+        DOM.mensajeError[10].textContent = DOM.titulo.validationMessage;
         DOM.titulo.style.border = "solid 2px red";
     };
     if(!DOM.descripcion.validationMessage == ""){
         e.preventDefault();
-        DOM.mensajeError[10].textContent = DOM.descripcion.validationMessage;
+        DOM.mensajeError[11].textContent = DOM.descripcion.validationMessage;
         DOM.descripcion.style.border = "solid 2px red";
     };
-    
-    
 })
-
