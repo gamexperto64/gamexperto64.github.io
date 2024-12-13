@@ -8,6 +8,9 @@ export default function Contenedor(){
         console.log(personas);
     }
     return(
+        //Lista de personas (TAREA PARA MAÑANA)
+        //... lo ideal ... componente <ListaPersonas>
+        // o programarlo directamente aquí
         <FrmPersona addPersona = {addPersona}/>
     )
 }
