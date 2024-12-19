@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')).render(
                 <Route index element={<Inicio/>}></Route>
                 <Route path="/centro" element={<Centro/>}></Route>
                 <Route path="/ciclo" element={<Ciclo/>}></Route>
-                <Route path="/ciclo" element={<Curso/>}></Route>
+                <Route path="/curso" element={<Curso/>}></Route>
                 <Route path="/daw2" element={<Daw2/>}></Route>
                 <Route path="/grupo/:letra" element={<Grupo/>}></Route>
                 <Route path='*' element={<Navigate to="/" replace="true"/>}></Route>

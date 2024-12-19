@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 
-
-
 export default function App({addPersona}) {
     const persona ={
         nombre: "",
