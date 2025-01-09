@@ -1,17 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
-const grupos = ["A","B"]; 
-export default function Daw2(){
-    return(
-        <>
-            <h3>Grupos del curso 2º DAW</h3>
-            <ul>
-                {grupos.map(grupo => 
-                    <li key={grupo}>
-                        <Link to={`/grupo/${grupo}`}>2º DAW grupo{grupo}</Link>
-                    </li>)}
-            </ul>
-        </>
-    )
+const grupos = ["A", "B"]
+
+function Daw2() {
+  const navegar = useNavigate();
+  return (
+    <div>
+        <h1>2º DAW</h1>
+        <ul>
+            {grupos.map((grupo,i) => (
+                <li key={`${i}+${grupo}`}><Link to={`/grupo/${grupo}`}>2º DAW Grupo {grupo}</Link></li>
+            ))}
+        </ul>
+    </div>
+  )
 }
+
+export default Daw2

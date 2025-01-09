@@ -6,7 +6,8 @@ export default function Layoutlet(){
             <nav>
                 <Link to="/inicio">Inicio</Link> |
                 <Link to="/centro"> Centro</Link> |
-                <Link to="/daw2"> 2º DAW</Link> 
+                <Link to="/daw2"> 2º DAW</Link> |
+                <Link to="/listaAlumnado"> Alumnos</Link> |
             </nav>
             <div>
                 <Outlet/>
