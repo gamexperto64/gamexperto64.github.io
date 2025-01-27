@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,12 @@
                     <div>
                         <label for="NombreUsuario">Nombre de usuario</label>
                         <input type="text" name="NombreUsuario" id="NombreUsuario" placeholder="Nombre de usuario" size="50" minlength="4" maxlength="20" required>
-                        <span id="msgUser">El Nombre de Usuario es obligatorio</span>
+                        <span id="msgUser"></span>
                     </div>
                     <div>
                         <label for="Contrasena">Contraseña</label>
                         <input type="password" name="Contrasena" id="Contrasena" placeholder="Contraseña" size="50" pattern="[0-9]{8}$" maxlength="8" required>
-                        <span id="msgPsw">La Contraseña ha de ser numérica</span>
+                        <span id="msgPsw"></span>
                         <input type="checkbox" name="mostrar" id="mostrar">
                         <label for="mostrar">Mostrar Contraseña</label>
                     </div>    
@@ -32,22 +32,22 @@
                     <div>
                         <label for="Nombre">Nombre</label>
                         <input type="text" name="Nombre" id="Nombre" placeholder="Nombre" size="50" minlength="4" maxlength="20" pattern="[A-Za-z]+" required>
-                        <span id="msgName">Introduzca su nombre</span>
+                        <span id="msgName"></span>
                     </div>
                     <div>
                         <label for="Apellidos">Apellidos</label>
                         <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" size="50" minlength="4" maxlength="20" required>
-                        <span id="msgAp">Introduzca sus apellidos</span>
+                        <span id="msgAp"></span>
                     </div>
                     <div>
                         <label for="Telefono">Teléfono</label>
                         <input type="tel" name="Telefono" id="Telefono" pattern="^+34[0-9]{9}$" placeholder="Ejem: (+34)922123123" required >
-                        <span id="msgTel">El Teléfono introducido es incorrecto o no válido</span>
+                        <span id="msgTel"></span>
                     </div>
                     <div>
                         <label for="CodigoPostal">Código Postal</label>
                         <input type="number" name="CodigoPostal" id="CodigoPostal" pattern="^38[0-9]{3}$" placeholder="38XXX" min="38000" max="38999" required >
-                        <span id="msgCP">El Código Postal introducido es incorrecto o no válido</span>
+                        <span id="msgCP"></span>
                     </div>
                     <div class="sec2-1">
                         <div>
@@ -59,7 +59,7 @@
                                     <option value="nie">NIE</option>
                                 </select>
                                 <input type="text" name="DniNie" id="DniNie" placeholder="DNI/NIE" pattern="([XYZxyz]\d{7}|[0-9]{8})[A-Za-z]" disabled required> 
-                                <span id="msgDoc">Seleccione el tipo de documento</span>
+                                <span id="msgDoc"></span>
                             </div>
                         </div>
                         <div>
@@ -70,14 +70,14 @@
                             <label for="Particular">Particular</label>
                             <input type="radio" name="CuentaComo" id="Empresa" value="Empresa" required>
                             <label for="Empresa" class="inline">Empresa</label>
-                            <span id="msgCuenta">Seleccione tu tipo de cuenta</span>
+                            <span id="msgCuenta"></span>
                         </div>
                         <div>                        
                             <label for="AnioNacimiento">Año de Nacimiento</label>
                             <select name="AnioNacimiento" id="AnioNacimiento" required>
                                 <option value="">---</option>
                             </select>
-                            <span id="msgAnio">Seleccione su año de nacimiento</span>
+                            <span id="msgAnio"></span>
                         </div>
                     </div> 
                 </section>
@@ -108,7 +108,7 @@
                         <label for="lectura">Lectura</label>
                     </div>
                     <input type="hidden" name="Aficiones" id="Aficiones" required>
-                    <span id="msgAfi">Elija al menos dos aficiones</span>
+                    <span id="msgAfi"></span>
                 </div>
             </fieldset>
             <fieldset>
@@ -116,14 +116,14 @@
                 <div>
                     <label for="PublicacionTitulo">Título</label>                     
                     <input type="text" name="PublicacionTitulo" id="PublicacionTitulo" placeholder="Título" minlength="4" maxlength="15" required>
-                    <span id="msgTitulo">Introduzca la descripción de la publicación</span>
+                    <span id="msgTitulo"></span>
                     <span class="cont" id="c1">0/15</span>
                 </div>
                     
                 <div>
                     <label for="PublicacionDescripcion">Descripción</label>                     
                     <textarea name="PublicacionDescripcion" id="PublicacionDescripcion" maxlength="120" minlength="4" placeholder="Añada una descripción" required></textarea>
-                    <span id="msgDesc">Introduzca la descripción de la publicación</span>
+                    <span id="msgDesc"></span>
                     <span class="cont" id="c2">0/120</span>
                 </div>                    
             </fieldset>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { grupos } from '../main';
-import { alumnos } from '../main';
+import { grupos } from './main';
+import { alumnos } from './main';
 
 export default function Formulario() {
   const { id } = useParams();
@@ -56,7 +56,7 @@ export default function Formulario() {
             onChange={e => setFormData({ ...formData, id: e.target.value })}
             disabled={!!id}
           />
-          {errors.id && <p classname="error">{errors.id}</p>}
+          {errors.id && <p className="error">{errors.id}</p>}
         </div>
         <div>
           <label>Nombre:</label>
@@ -65,7 +65,7 @@ export default function Formulario() {
             value={formData.nombre}
             onChange={e => setFormData({ ...formData, nombre: e.target.value })}
           />
-          {errors.nombre && <p classname="error">{errors.nombre}</p>}
+          {errors.nombre && <p className="error">{errors.nombre}</p>}
         </div>
         <div>
           <label>Grupo:</label>
@@ -80,7 +80,7 @@ export default function Formulario() {
               </option>
             ))}
           </select>
-          {errors.grupo && <p classname="error">{errors.grupo}</p>}
+          {errors.grupo && <p className="error">{errors.grupo}</p>}
         </div>
         <button type="submit">{id ? 'Actualizar' : 'Añadir'}</button>
         <button type="button" onClick={() => navigate('/')}>Cancelar</button>

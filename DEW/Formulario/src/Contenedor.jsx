@@ -1,23 +1,32 @@
-import { useState } from "react"
-import FrmPersona from './FrmPersona'
-import ListaPersona from './ListaPersona'
+import FrmPersona from './FrmPersona.jsx'
+import { useState } from 'react';
+import ListaPersonas from './listaPersonas.jsx';
 
-let personas = [];
-export default function Contenedor(){
-    const [numPersonas, setNumPersonas] = useState(0);
 
-    function addPersona(persona){
+let personas = localStorage.getItem('personas') !== null? JSON.parse(localStorage.getItem('personas')):[] ;
+ 
+// let localPersonas=localStorage.getItem('personas');
+// localPersonas = JSON.parse(localPersonas);
+// localPersonas.forEach( (persona) => personas.push(persona));
+
+function Contenedor() {
+    const [numPersonas, setNumPersonas] = useState(personas.length);
+    function addPersona(persona) {
         personas.push(persona);
         setNumPersonas(personas.length);
-        localStorage.setItem("Personas", JSON.stringify(personas));
+        localStorage.setItem('personas', JSON.stringify(personas));
+
+        //
+        console.log(personas);
+        console.log(numPersonas);
     }
-    return(
-        //Lista de personas (TAREA PARA MAÑANA)
-        //... lo ideal ... componente <ListaPersonas>
-        // o programarlo directamente aquí
-        <>
-            <FrmPersona addPersona = {addPersona}/>
-            <ListaPersona personas={personas}/>
-        </>
-    )
+    
+    return (
+      <>
+        <FrmPersona addPersona={addPersona} />
+        <ListaPersonas personas={personas} />
+      </>
+  )
 }
+
+export default Contenedor

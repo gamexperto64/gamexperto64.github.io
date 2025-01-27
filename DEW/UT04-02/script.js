@@ -25,9 +25,18 @@ const DOM = {
     arte: document.getElementById("arte"),
     videojuegos: document.getElementById("videojuegos"),
     lectura: document.getElementById("lectura"),
-    cuenta: document.getElementById("msgCuenta"),
+    msgUsername: document.getElementById("msgUser"),
+    msgPassword: document.getElementById("msgPsw"),
+    nombre: document.getElementById("msgName"),
+    msgApellidos: document.getElementById("msgAp"),
+    tel: document.getElementById("msgTel"),
     afi: document.getElementById("msgAfi"),
-    doc: document.getElementById("msgDoc")
+    cuenta: document.getElementById("msgCuenta"),
+    anio: document.getElementById("msgAnio"),
+    doc: document.getElementById("msgDoc"),
+    CP: document.getElementById("msgCP"),
+    msgTitulo: document.getElementById("msgTitulo"),
+    desc: document.getElementById("msgDesc"),
 }
 
 const mostrar = document.getElementById("mostrar");
@@ -166,7 +175,7 @@ function checkHobbies()
 {
     if (seleccionados.length > 1)
     {
-        DOM.afi.style.visibility = "hidden";
+        DOM.afi.textContent = "Elija al menos dos aficiones";
         DOM.aficiones = seleccionados.values;
     }
     else
@@ -178,34 +187,69 @@ function checkHobbies()
 DOM.form.addEventListener("submit", (e)=> {
     if(!DOM.username.validationMessage == ""){
         e.preventDefault();
+        DOM.msgUsername.textContent="El Nombre de Usuario es obligatorio";
         DOM.mensajeError[0].textContent = DOM.username.validationMessage;
         DOM.username.style.border = "solid 2px red";
-    }
+    }else{
+        DOM.msgUsername.textContent="";
+        DOM.mensajeError[0].textContent = "";
+        DOM.username.style.border = "solid 1px";
+    };
+
     if(!DOM.password.validationMessage == ""){
         e.preventDefault();
+        DOM.msgPassword.textContent = "La Contraseña ha de ser numérica";
         DOM.mensajeError[1].textContent = DOM.password.validationMessage;
         DOM.password.style.border = "solid 2px red";
+    }else{
+        DOM.msgPassword.textContent = "";
+        DOM.mensajeError[1].textContent = "";
+        DOM.password.style.border = "solid 1px";
     };
+
     if(!DOM.name.validationMessage == ""){
         e.preventDefault();
+        DOM.nombre.textContent = "Introduzca su nombre";
         DOM.mensajeError[2].textContent = DOM.name.validationMessage;
         DOM.name.style.border = "solid 2px red";
+    }else{
+        DOM.nombre.textContent = "";
+        DOM.mensajeError[2].textContent = "";
+        DOM.name.style.border = "solid 1px";
     };
+
     if(!DOM.apellidos.validationMessage == ""){
         e.preventDefault();
+        DOM.msgApellidos.textContent = "Introduzca sus apellidos";
         DOM.mensajeError[3].textContent = DOM.apellidos.validationMessage;
         DOM.apellidos.style.border = "solid 2px red";
+    }else{
+        DOM.msgApellidos.textContent = "";
+        DOM.mensajeError[3].textContent = "";
+        DOM.apellidos.style.border = "solid 1px";
     };
+
     if(!DOM.telephone.validationMessage == ""){
         e.preventDefault();
+        DOM.tel.textContent = "El Teléfono introducido es incorrecto o no válido";
         DOM.mensajeError[4].textContent = DOM.telephone.validationMessage;    
         DOM.telephone.style.border = "solid 2px red";
-    };
+    }else{
+        DOM.tel.textContent = "";
+        DOM.mensajeError[4].textContent = "";    
+        DOM.telephone.style.border = "solid 1px";
+    }
     if(!DOM.postal.validationMessage == ""){
         e.preventDefault();
+        DOM.CP.textContent = "El Código Postal introducido es incorrecto o no válido";
         DOM.mensajeError[5].textContent = DOM.postal.validationMessage;
         DOM.postal.style.border = "solid 2px red";
-    };
+    }
+    else{
+        DOM.CP.textContent = "";
+        DOM.mensajeError[5].textContent = "";
+        DOM.postal.style.border = "solid 1px";   
+    }
     if(!DOM.documentoSel.validationMessage == ""){
         e.preventDefault();
         DOM.doc.textContent = "Seleccione el tipo de documento";
@@ -220,10 +264,12 @@ DOM.form.addEventListener("submit", (e)=> {
     };
     if(!DOM.empresa.validationMessage == "" || !DOM.particular.validationMessage == ""){
         e.preventDefault();
+        DOM.cuenta.textContent = "Seleccione tu tipo de cuenta";
         DOM.mensajeError[7].textContent = DOM.empresa.validationMessage;
     };
     if(!DOM.nac.validationMessage == ""){
         e.preventDefault();
+        DOM.anio.textContent = "Seleccione su año de nacimiento";
         DOM.mensajeError[8].textContent = DOM.nac.validationMessage;
         DOM.nac.style.border = "solid 2px red";
     };
@@ -233,11 +279,13 @@ DOM.form.addEventListener("submit", (e)=> {
     }
     if(!DOM.titulo.validationMessage == ""){
         e.preventDefault();
+        DOM.titulo.textContent = "Introduzca el título de la publicación";
         DOM.mensajeError[10].textContent = DOM.titulo.validationMessage;
         DOM.titulo.style.border = "solid 2px red";
     };
     if(!DOM.descripcion.validationMessage == ""){
         e.preventDefault();
+        DOM.desc.textContent = "Introduzca la descripción de la publicación";
         DOM.mensajeError[11].textContent = DOM.descripcion.validationMessage;
         DOM.descripcion.style.border = "solid 2px red";
     };

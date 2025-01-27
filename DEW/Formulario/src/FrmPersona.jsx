@@ -1,42 +1,44 @@
 import { useState } from 'react'
+import './App.css'
+import PropTypes from 'prop-types';
 
+function FrmPersona({addPersona}) {
+  let setNombre, setMayorDeEdad, setTipoCiclo;
+  //Valores iniciales del formulario
+  const unaPersona = {
+    nombre: "",
+    esMayorDeEdad: true,
+    tipoCiclo: "superior",
+  };
 
-export default function App({addPersona}) {
-    const persona ={
-        nombre: "",
-        edad: true,
-        ciclo: "superior"
-    }
-    let setNombre
-    [persona.nombre, setNombre] = useState(persona.nombre);
+  [unaPersona.nombre, setNombre] = useState(unaPersona.nombre);
+  [unaPersona.mayorDeEdad, setMayorDeEdad] = useState(unaPersona.esMayorDeEdad);
+  [unaPersona.tipoCiclo, setTipoCiclo] = useState(unaPersona.tipoCiclo);
 
-    let setEdad
-    [persona.edad, setEdad] = useState(persona.edad);
-
-    let setCiclo
-    [persona.ciclo, setCiclo] = useState(persona.ciclo);
-    
-    return(
-        <form action="" id='form' method='post' onSubmit={(e) => (e.preventDefault(), addPersona(persona), console.log(persona))}> 
-            <label htmlFor="nombre">Nombre completo:</label>
-            <input type="text" name="nombre" id="nombre" value={persona.nombre} onChange={e => setNombre(e.target.value)}/>
-            <br />
-            <br />
-            <label htmlFor="edad">Es Mayor de Edad</label>
-            <input type="checkbox" name="edad" id="edad" checked={persona.edad} onChange={e => setEdad(e.target.checked)}/>
-            <br />
-            <br />
-            <input type="radio" name="ciclo" id="superior" value="superior" checked={persona.ciclo == "superior"} onChange={e => setCiclo(e.target.value)}/>
-            <label htmlFor="superior">Ciclo Superior</label>
-            <br />
-            <br />
-            <input type="radio" name="ciclo" id="medio" value="medio" checked={persona.ciclo == "medio"} onChange={e => setCiclo(e.target.value)}/>
-            <label htmlFor="medio">Ciclo Medio</label>
-            <br />
-            <br />
-            <input type="submit" value="Enviar"/>
-        </form>
-    )
+  return (
+    <form action="" onSubmit={(e) => {
+      addPersona(unaPersona);
+      e.preventDefault();
+          }
+        }>
+      <label htmlFor="nombre">Nombre completo:</label>
+      <input type="text" name="nombre" id="nombre" value={unaPersona.nombre} onChange={(e)=> setNombre(e.target.value)}/>
+      <label htmlFor="mayor-edad">Es mayor de edad</label>
+      <input type="checkbox" name="mayor-edad" id="mayor-edad" checked={unaPersona.mayorDeEdad} onChange={(e) => setMayorDeEdad(e.target.checked)}/>
+      <fieldset>
+        <legend>Tipo de Ciclo</legend>
+        <input type="radio" name="tipo-ciclo" id="medio" value="medio" checked={unaPersona.tipoCiclo == "medio"} onChange={(e) => setTipoCiclo(e.target.value)}/>
+        <label htmlFor="medio">Ciclo Medio</label>
+        <input type="radio" name="tipo-ciclo" id="superior" value="superior" checked={unaPersona.tipoCiclo == "superior"} onChange={(e) => setTipoCiclo(e.target.value)}/>
+        <label htmlFor="superior">Superior</label>
+      </fieldset>
+      <button type="submit">Añadir</button>
+    </form>
+  )
 }
 
+FrmPersona.propTypes = {
+  addPersona: PropTypes.func
+}
 
+export default FrmPersona;
